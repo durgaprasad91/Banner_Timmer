@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../App.css'
 
 const Dashboard = ({ onToggleBanner, onUpdateBanner, description, timer, link, isVisible }) => {
   const [newDescription, setNewDescription] = useState(description);

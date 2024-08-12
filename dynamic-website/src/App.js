@@ -64,7 +64,7 @@ const App = () => {
         description={description}
         timer={timer}
         link={link}
-        isVisible={isVisible} 
+        isVisible={isVisible}  // Pass isVisible to Dashboard
       />
     </div>
   );

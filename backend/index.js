@@ -23,11 +23,11 @@ app.get('/api/banner', (req, res) => {
   db.query(query, (err, result) => {
     if (err) {
       console.error('Error fetching banner:', err);
-      res.status(500).send('Error fetching banner');
+      res.status(500).json({ message: 'Error fetching banner' });
     } else if (result.length > 0) {
       res.json(result[0]);
     } else {
-      res.status(404).send('Banner not found');
+      res.status(404).json({ message: 'Banner not found' });
     }
   });
 });
@@ -39,9 +39,9 @@ app.post('/api/banner', (req, res) => {
   db.query(query, [description, timer, link], (err, result) => {
     if (err) {
       console.error('Error updating banner:', err);
-      res.status(500).send({ message: 'Error updating banner' });
+      res.status(500).json({ message: 'Error updating banner' });
     } else {
-      res.send({ message: 'Banner updated successfully' });
+      res.json({ message: 'Banner updated successfully' });
     }
   });
 });
