@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+Dynamic One-Page Website with React
+Overview
+This project is a dynamic one-page website built with React. It features a banner that can be toggled on or off, displays a countdown timer, and allows updates to the banner's description, timer, and link via an internal dashboard. The backend, connected to a MySQL database, handles the banner's data storage and updates.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Banner Management: Toggle the banner's visibility, update its description, timer, and link.
+Countdown Timer: Displays a countdown timer on the banner that shows the remaining time before the banner disappears.
+Internal Dashboard: Allows users to update the banner details and toggle its visibility.
+Installation
+Prerequisites
+Node.js (v14 or later)
+npm (v6 or later)
+MySQL database
+Frontend Setup
+Clone the repository:
 
-## Available Scripts
+bash
+Copy code
+git clone <repository-url>
+cd <repository-directory>
+Install dependencies:
 
-In the project directory, you can run:
+bash
+Copy code
+npm install
+Run the application:
 
-### `npm start`
+bash
+Copy code
+npm start
+This will start the development server and open the application in your default web browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Backend Setup
+The backend requires a MySQL database to store banner details.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Create and configure the MySQL database:
 
-### `npm test`
+sql
+Copy code
+CREATE DATABASE bannerDB;
+USE bannerDB;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+CREATE TABLE banners (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  description VARCHAR(255),
+  timer INT,
+  link VARCHAR(255)
+);
+Ensure the backend server is running on http://localhost:3001.
 
-### `npm run build`
+Deployment
+Frontend Deployment
+The frontend has been deployed. You can access it via [your-deployed-frontend-url]. Due to the complexity of the backend and time constraints, I was unable to deploy it fully. The backend server needs to be set up and run locally or on a separate hosting service to complete the full functionality of the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend Deployment
+Instructions to deploy the backend:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ensure you have Node.js installed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Navigate to the backend directory and install dependencies:
 
-### `npm run eject`
+bash
+Copy code
+npm install
+Create a .env file with your MySQL database credentials:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+plaintext
+Copy code
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=bannerDB
+Start the backend server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy code
+npm start
+This will start the backend server, and it should be accessible at http://localhost:3001.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Due to the extensive features of this project and the late hour of development, I was able to deploy only the frontend part. I encourage you to set up and deploy the backend as described to achieve the full functionality of the project. I hope you find the project unique and innovative. Your feedback and understanding are greatly appreciated!
